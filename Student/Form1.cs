@@ -15,7 +15,7 @@ namespace Student
         public Form1()
         {
             InitializeComponent();
-           // isChecked = radioButton1.Checked;
+            // isChecked = radioButton1.Checked;
             //radioButton2.Checked = false;
         }
 
@@ -32,23 +32,23 @@ namespace Student
         public void clear()
         {
             radioButton1.Checked = false;
-            radioButton2.Checked = false;
+           // radioButton2.Checked = false;
         }
 
-
-        bool isChecked = false;
-
-        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        public void Print()
         {
-            isChecked = radioButton1.Checked;
-            if(radioButton1.Checked == true)
+            if (radioButton1.Checked == true)
             {
                 label1.Text = "1";
                 label2.Text = "Beni";
                 label3.Text = "Courses: ";
-                courses();
                 label4.Text = "Fees paid so far";
             }
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            Print();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -59,7 +59,7 @@ namespace Student
         private void button1_Click(object sender, EventArgs e)
         {
            // string name = "test this point";
-            if (radioButton1.Checked == true || radioButton2.Checked == true)
+            if (radioButton1.Checked == true)
             {  
                 Courses c = new Courses(label2.Text);
                 c.ShowDialog();
@@ -67,16 +67,14 @@ namespace Student
             }
         }
 
-        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        private void groupBox1_Enter(object sender, EventArgs e)
         {
-            if (radioButton2.Checked == true)
-            {
-                label1.Text = "2";
-                label2.Text = "Miri";
-                label3.Text = "Courses: ";
-                courses();
-                label4.Text = "Fees paid so far";
-            }
+            
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+           
         }
     }
 }
