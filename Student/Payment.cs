@@ -188,7 +188,7 @@ namespace Student
         {
             calculate();
             int shuma = Convert.ToInt32(textBox4.Text);
-            int pag = Convert.ToInt32(textBox3.Text);
+            int pag = Convert.ToInt32(textBox8.Text);
             if(shuma > pag)
             {
                 MessageBox.Show("Pagesa te behet fikse ose me pake");
@@ -199,6 +199,7 @@ namespace Student
                 if (shuma <= pag)
                 {
                     int total = pag - shuma;
+                    textBox8.Text = Convert.ToString(total);
                     MessageBox.Show("Total u paguan " + shuma + " mbetja eshte " + total);
                 }
             }
@@ -224,6 +225,11 @@ namespace Student
         {
             
            
+        }
+
+        private void textBox8_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
