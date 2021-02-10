@@ -49,7 +49,7 @@ namespace Student
                 textBox7.Text = Convert.ToString(totpay);
                 textBox8.Text = Convert.ToString(totpay);
                 string pay = null;
-                textBox4.Text = pay;
+                textBox7.Text = pay;
                 int tobepaid = totpay - Convert.ToInt32(pay);
                 textBox8.Text = Convert.ToString(tobepaid);
 
@@ -184,26 +184,62 @@ namespace Student
             }
         }
 
+        /*  else
+               {
+                   if (textBox8.Text == "")
+                   {
+                       radioButton1.Visible = false;
+                       radioButton2.Visible = false;
+                       label9.Visible = false;
+                       label10.Visible = false;
+                       label11.Visible = false;
+                       label12.Visible = false;
+                       textBox1.Visible = false;
+                       textBox2.Visible = false;
+                       textBox3.Visible = false;
+                       textBox4.Visible = false;
+                       button3.Visible = false;
+
+                       MessageBox.Show("Pagesa u be totale");
+                   }
+               } */
+
         private void button3_Click(object sender, EventArgs e)
         {
             calculate();
             int shuma = Convert.ToInt32(textBox4.Text);
             int pag = Convert.ToInt32(textBox8.Text);
-            if(shuma > pag)
+            if (shuma > pag || shuma < pag)
             {
                 MessageBox.Show("Pagesa te behet fikse ose me pake");
                 textBox4.Text = "";
             }
             else
             {
-                if (shuma <= pag)
+                if (shuma == pag)
                 {
                     int total = pag - shuma;
                     textBox8.Text = Convert.ToString(total);
                     MessageBox.Show("Total u paguan " + shuma + " mbetja eshte " + total);
+                    if (textBox8.Text == "0")
+                    {
+                        radioButton1.Visible = false;
+                        radioButton2.Visible = false;
+                        label9.Visible = false;
+                        label10.Visible = false;
+                        label11.Visible = false;
+                        label12.Visible = false;
+                        textBox1.Visible = false;
+                        textBox2.Visible = false;
+                        textBox3.Visible = false;
+                        textBox4.Visible = false;
+                        button3.Visible = false;
+
+                        MessageBox.Show("Pagesa u be totale");
+                    }
                 }
+
             }
-          
         }
 
         private void textBox5_TextChanged(object sender, EventArgs e)
