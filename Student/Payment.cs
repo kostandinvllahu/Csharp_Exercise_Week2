@@ -72,9 +72,10 @@ namespace Student
                     int total1 = num3 - num4 * num3 / 100;
                     textBox6.Text = Convert.ToString(total1);
                     int totpay = total + total1;
-                    textBox7.Text = Convert.ToString(totpay);
-                    int tobepaid = totpay;
-                    textBox8.Text = Convert.ToString(totpay);
+                    double fee = Convert.ToDouble(totpay) * 0.123;
+                    int tobepaid = totpay + Convert.ToInt32(fee);
+                    textBox7.Text = Convert.ToString(tobepaid);
+                    textBox8.Text = Convert.ToString(tobepaid);
                 }
                 else
                 {
@@ -90,9 +91,10 @@ namespace Student
                         int total1 = num3 - num4 * num3 / 100;
                         textBox6.Text = Convert.ToString(total1);
                         int totpay = total + total1;
-                        textBox7.Text = Convert.ToString(totpay);
-                        int tobepaid = totpay;
-                        textBox8.Text = Convert.ToString(totpay);
+                        double fee = Convert.ToDouble(totpay) * 0.123;
+                        int tobepaid = Convert.ToInt32(fee) + totpay;
+                        textBox7.Text = Convert.ToString(tobepaid);
+                        textBox8.Text = Convert.ToString(tobepaid);
                     }
                     else
                     {
@@ -108,9 +110,10 @@ namespace Student
                             int total1 = num3 + num4 * num3 / 100;
                             textBox6.Text = Convert.ToString(total1);
                             int totpay = total + total1;
-                            textBox7.Text = Convert.ToString(totpay);
-                            int tobepaid = totpay;
-                            textBox8.Text = Convert.ToString(totpay);
+                            double fee = Convert.ToDouble(totpay) * 0.123;
+                            int tobepaid = Convert.ToInt32(fee) + totpay;
+                            textBox7.Text = Convert.ToString(tobepaid);
+                            textBox8.Text = Convert.ToString(tobepaid);
                         }
                     }
                 }
@@ -170,6 +173,7 @@ namespace Student
                     int b = Convert.ToInt32(textBox2.Text);
                     int c = a + b * a / 100;
                     textBox3.Text = Convert.ToString(c.ToString());
+                    textBox9.Text = "12.3%";
                 }
                
             }
