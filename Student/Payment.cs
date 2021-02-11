@@ -36,6 +36,7 @@ namespace Student
         {
             if (label25.Text == "Onsite" && label26.Text == "Onsite")
             {
+                
                 int num1 = Convert.ToInt32(label3.Text);
                 int num2 = Convert.ToInt32(label7.Text);
                 int total = num1 + num2 * num1 / 100;
@@ -46,12 +47,14 @@ namespace Student
                 int total1 = num3 + num4 * num3 / 100;
                 textBox6.Text = Convert.ToString(total1);
                 int totpay = total + total1;
-                textBox7.Text = Convert.ToString(totpay);
-                textBox8.Text = Convert.ToString(totpay);
-                string pay = null;
-                textBox7.Text = pay;
-                int tobepaid = totpay - Convert.ToInt32(pay);
-                textBox8.Text = Convert.ToString(tobepaid);
+                double fee = Convert.ToDouble(totpay) * 0.123;
+                int tax = Convert.ToInt32(fee) + totpay;
+                textBox7.Text = Convert.ToString(tax);
+                textBox8.Text = Convert.ToString(tax);
+               // string pay = null;
+                //textBox7.Text = pay;
+                //int tobepaid = tax;
+                textBox8.Text = Convert.ToString(tax);
 
 
             }
@@ -130,7 +133,7 @@ namespace Student
         public void clean()
         {
             radioButton1.Checked = false;
-            radioButton2.Checked = false;
+          //  radioButton2.Checked = false;
             label9.Visible = false;
             label10.Visible = false;
             label11.Visible = false;
@@ -140,6 +143,8 @@ namespace Student
             textBox3.Visible = false;
             textBox4.Visible = false;
             button3.Visible = false;
+            textBox9.Visible = false;
+            label27.Visible = false;
            
         }
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
@@ -157,6 +162,8 @@ namespace Student
                 button3.Visible = true;
                 textBox1.Text = label3.Text;
                 textBox2.Text = label7.Text;
+                textBox9.Visible = true;
+                label27.Visible = true;
                 if (label16.Text == "Extra Charge %:")
                 {
                     int a = Convert.ToInt32(textBox1.Text);
@@ -170,7 +177,7 @@ namespace Student
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
-            if (radioButton2.Checked == true)
+           /* if (radioButton2.Checked == true)
             {
                 label9.Visible = true;
                 label10.Visible = true;
@@ -181,7 +188,7 @@ namespace Student
                 textBox3.Visible = true;
                 textBox4.Visible = true;
                 button3.Visible = true;
-            }
+            }*/
         }
 
         /*  else
@@ -224,7 +231,7 @@ namespace Student
                     if (textBox8.Text == "0")
                     {
                         radioButton1.Visible = false;
-                        radioButton2.Visible = false;
+                       // radioButton2.Visible = false;
                         label9.Visible = false;
                         label10.Visible = false;
                         label11.Visible = false;
@@ -234,6 +241,8 @@ namespace Student
                         textBox3.Visible = false;
                         textBox4.Visible = false;
                         button3.Visible = false;
+                        textBox9.Visible = false;
+                        label27.Visible = false;
 
                         MessageBox.Show("Pagesa u be totale");
                     }
