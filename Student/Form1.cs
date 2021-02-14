@@ -41,8 +41,7 @@ namespace Student
             {
                 label1.Text = "1";
                 label2.Text = "Beni";
-                label3.Text = "Courses: ";
-                label4.Text = "Fees paid so far";
+                label3.Text = "Courses: 2 ";
             }
         }
 
